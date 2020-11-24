@@ -28,13 +28,13 @@ START : EXPR1        {printf("[Reduce %i%s", yyn, "]");}
 	  ;
 
 EXPR1 : VAR_DECL  {printf("[Reduce %i%s", yyn, "]");} 
-	 ;
+	  ;
 
 VAR_DECL : VAR _semicolon {printf("[Reduce %i%s", yyn, "]");}
-	 ;
+	     ;
 
 VAR : TYPE _id {printf("[Reduce %i%s", yyn, "]");}
-	 ;
+	;
 
 TYPE : _int         {printf("[Reduce %i%s", yyn, "]");}
 	 | _double      {printf("[Reduce %i%s", yyn, "]");}
@@ -42,6 +42,12 @@ TYPE : _int         {printf("[Reduce %i%s", yyn, "]");}
 	 | _string      {printf("[Reduce %i%s", yyn, "]");}
 	 | _id        {printf("[Reduce %i%s", yyn, "]");}
 	 ;
+
+CONSTANT : _intconstant      {printf("[Reduce %i%s", yyn, "]");}
+         | _doubleconstant   {printf("[Reduce %i%s", yyn, "]");}
+         | _stringconstant   {printf("[Reduce %i%s", yyn, "]");}
+         | _booleanconstant  {printf("[Reduce %i%s", yyn, "]");}
+         ;
 
 %%
 
