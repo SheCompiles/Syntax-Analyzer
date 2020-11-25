@@ -24,7 +24,7 @@ PROGRAM : DECL       {printf("[Reduce %i%s", yyn, "]");}
 
 /* Left-recursion */
 DECL : EXPR1        {printf("[Reduce %i%s", yyn, "]");}
-     | START EXPR1  {printf("[Reduce %i%s", yyn, "]");}
+     | DECL EXPR1  {printf("[Reduce %i%s", yyn, "]");}
      ;
 
 EXPR1 : VAR_DECL     {printf("[Reduce %i%s", yyn, "]");} 
