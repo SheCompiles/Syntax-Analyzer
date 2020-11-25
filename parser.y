@@ -5,7 +5,7 @@ extern int yyparse();
 void yyerror(char *s);
 %}
 
-%start PARSER
+%start PROGRAM
 
 %token _leftparen _rightparen _leftbrace _rightbrace _leftbracket _rightbracket _semicolon 
 %token _boolean _double _int _string _class _implements _interface _void _id
@@ -19,13 +19,13 @@ void yyerror(char *s);
 
 %%
 
-PARSER : START       {printf("[Reduce %i%s", yyn, "]");}
-       ;
+PROGRAM : DECL       {printf("[Reduce %i%s", yyn, "]");}
+        ;
 
 /* Left-recursion */
-START : EXPR1        {printf("[Reduce %i%s", yyn, "]");}
-      | START EXPR1  {printf("[Reduce %i%s", yyn, "]");}
-      ;
+DECL : EXPR1        {printf("[Reduce %i%s", yyn, "]");}
+     | START EXPR1  {printf("[Reduce %i%s", yyn, "]");}
+     ;
 
 EXPR1 : VAR_DECL     {printf("[Reduce %i%s", yyn, "]");} 
       ;
