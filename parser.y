@@ -29,7 +29,8 @@ START : EXPR1        {printf("[Reduce %i%s", yyn, "]");}
       | START EXPR1  {printf("[Reduce %i%s", yyn, "]");}
       ;
 
-EXPR1 : VAR_DECL  {printf("[Reduce %i%s", yyn, "]");} 
+EXPR1 : VAR_DECL        {printf("[Reduce %i%s", yyn, "]");} 
+      | FUNCTION_DECL   {printf("[Reduce %i%s", yyn, "]");}       
       ;
 
 VAR_DECL : VAR _semicolon {printf("[Reduce %i%s", yyn, "]");}
@@ -48,6 +49,10 @@ TYPE : _int         {printf("[Reduce %i%s", yyn, "]");}
      | _string      {printf("[Reduce %i%s", yyn, "]");}
      | _id          {printf("[Reduce %i%s", yyn, "]");}
      ;
+     
+FUNCTION_DECL : Type _id _leftparen FORMALS _rightparen STMT_BLOCK   {printf("[Reduce %i%s", yyn, "]");} 
+              | _void _id _leftparen FORMALS _rightparen STMT_BLOCK  {printf("[Reduce %i%s", yyn, "]");} 
+              ;
 
 VAR_PLUS : VAR                   {printf("[Reduce %i%s", yyn, "]");}
 	 | VAR_PLUS _comma VAR   {printf("[Reduce %i%s", yyn, "]");}
