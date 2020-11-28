@@ -52,7 +52,7 @@ TYPE : _int         {printf("[Reduce %i%s", yyn, "]");}
      | _id          {printf("[Reduce %i%s", yyn, "]");}
      ;
      
-FUNCTION_DECL : Type _id _leftparen FORMALS _rightparen STMT_BLOCK   {printf("[Reduce %i%s", yyn, "]");} 
+FUNCTION_DECL : TYPE _id _leftparen FORMALS _rightparen STMT_BLOCK   {printf("[Reduce %i%s", yyn, "]");} 
               | _void _id _leftparen FORMALS _rightparen STMT_BLOCK  {printf("[Reduce %i%s", yyn, "]");} 
               ;
 
@@ -76,7 +76,7 @@ IMPLEMENT : _implements ID_PLUS   {printf("[Reduce %i%s", yyn, "]");}
           | /* ZERO */            {printf("[Reduce %i%s", yyn, "]");} 
           ;
 
-CLASS_DECL : _class _id EXTEND IMPLEMENT _leftbrace FIELDS _rightbrace   {printf("[Reduce %i%s", yyn, "]");} 
+CLASS_DECL : _class _id EXTEND IMPLEMENT _leftbrace FIELD_PLUS _rightbrace   {printf("[Reduce %i%s", yyn, "]");} 
            ;
 
 FIELD : VAR_DECL        {printf("[Reduce %i%s", yyn, "]");} 
