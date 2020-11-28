@@ -30,7 +30,8 @@ START : EXPR1        {printf("[Reduce %i%s", yyn, "]");}
       ;
 
 EXPR1 : VAR_DECL        {printf("[Reduce %i%s", yyn, "]");} 
-      | FUNCTION_DECL   {printf("[Reduce %i%s", yyn, "]");}       
+      | FUNCTION_DECL   {printf("[Reduce %i%s", yyn, "]");}  
+      | CLASS_DECL      {printf("[Reduce %i%s", yyn, "]");} 
       ;
 
 VAR_DECL : VAR _semicolon {printf("[Reduce %i%s", yyn, "]");}
@@ -61,6 +62,29 @@ VAR_PLUS : VAR                   {printf("[Reduce %i%s", yyn, "]");}
 FORMALS : VAR_PLUS           {printf("[Reduce %i%s", yyn, "]");}
         | /* EPSILON */      {printf("[Reduce %i%s", yyn, "]");}
         ;
+	
+EXTEND : _extends _id    {printf("[Reduce %i%s", yyn, "]");} 
+       | /* ZERO */      {printf("[Reduce %i%s", yyn, "]");} 
+       ;
+
+ID_PLUS : _id                  {printf("[Reduce %i%s", yyn, "]");} 
+        | ID_PLUS _comma _id   {printf("[Reduce %i%s", yyn, "]");} 
+        ;
+
+IMPLEMENT : _implements ID_PLUS   {printf("[Reduce %i%s", yyn, "]");} 
+          | /* ZERO */            {printf("[Reduce %i%s", yyn, "]");} 
+          ;
+
+CLASS_DECL : _class _id EXTEND IMPLEMENT _leftbrace FIELDS _rightbrace   {printf("[Reduce %i%s", yyn, "]");} 
+           ;
+
+FIELD : VAR_DECL        {printf("[Reduce %i%s", yyn, "]");} 
+      | FUNCTION_DECL   {printf("[Reduce %i%s", yyn, "]");} 
+      ;
+
+FIELD_PLUS : FIELD_PLUS FIELD   {printf("[Reduce %i%s", yyn, "]");} 
+           | /* ZERO */         {printf("[Reduce %i%s", yyn, "]");} 
+           ;
 
 PROTOTYPE : TYPE _id _leftparen FORMALS _rightparen _semicolon    {printf("[Reduce %i%s", yyn, "]");}
           | _void _id _leftparen FORMALS _rightparen _semicolon   {printf("[Reduce %i%s", yyn, "]");}
