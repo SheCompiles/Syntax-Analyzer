@@ -59,6 +59,20 @@ PROTOTYPE_PLUS : PROTOTYPE_PLUS PROTOTYPE   {printf("[Reduce %i%s", yyn, "]");}
 	       | /* ZERO */                 {printf("[Reduce %i%s", yyn, "]");}
 	       ;
 
+EXPR_ONE : EXPR         {printf("[Reduce %i%s", yyn, "]");}
+	 | /* ZERO */   {printf("[Reduce %i%s", yyn, "]");}
+	 ;
+
+STMT : EXPR_ONE _semicolon   {printf("[Reduce %i%s", yyn, "]");}
+     | IF_STMT               {printf("[Reduce %i%s", yyn, "]");}
+     | WHILE_STMT            {printf("[Reduce %i%s", yyn, "]");}
+     | FOR_STMT              {printf("[Reduce %i%s", yyn, "]");}
+     | BREAK_STMT            {printf("[Reduce %i%s", yyn, "]");}
+     | RETURN_STMT           {printf("[Reduce %i%s", yyn, "]");}
+     | PRINT_STMT            {printf("[Reduce %i%s", yyn, "]");}
+     | STMT_BLOCK            {printf("[Reduce %i%s", yyn, "]");}
+     ;
+
 EXPR : LVALUE _assignop EXPR                                       {printf("[Reduce %i%s", yyn, "]");}
      | CONSTANT                                                    {printf("[Reduce %i%s", yyn, "]");} 
      | LVALUE                                                      {printf("[Reduce %i%s", yyn, "]");}
@@ -83,6 +97,10 @@ EXPR : LVALUE _assignop EXPR                                       {printf("[Red
      | _newarray _leftparen _id _rightparen                        {printf("[Reduce %i%s", yyn, "]");}
      | _newarray _leftparen _intconstant _comma Type _rightparen   {printf("[Reduce %i%s", yyn, "]");}
      ;
+
+EXPRS : EXPR                {printf("[Reduce %i%s", yyn, "]");}
+      | EXPRS _comma EXPR   {printf("[Reduce %i%s", yyn, "]");}
+      ;
 
 LVALUE : _id                  {printf("[Reduce %i%s", yyn, "]");} 
        | LVALUE LVALUE_EXPR   {printf("[Reduce %i%s", yyn, "]");}
