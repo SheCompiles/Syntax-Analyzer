@@ -5,7 +5,7 @@ extern int yyparse();
 void yyerror(char *s);
 %}
 
-%start PROGRAM
+%start PARSER
 
 %token _leftparen _rightparen _leftbrace _rightbrace _leftbracket _rightbracket _semicolon 
 %token _boolean _double _int _string _class _implements _interface _void _id
@@ -19,18 +19,18 @@ void yyerror(char *s);
 
 %%
 
-PROGRAM : DECL       {printf("[Reduce %i%s", yyn, "]");}
-        ;
+PARSER : START {printf("[Reduce %i%s", yyn, "]");}
+       ;
 
-/* Left-recursion */
-DECL : EXPR1        {printf("[Reduce %i%s", yyn, "]");}
-     | DECL EXPR1  {printf("[Reduce %i%s", yyn, "]");}
-     ;
-
-EXPR1 : VAR_DECL     {printf("[Reduce %i%s", yyn, "]");} 
+/* Left-Recursion */
+START : EXPR1        {printf("[Reduce %i%s", yyn, "]");}
+      | START EXPR1  {printf("[Reduce %i%s", yyn, "]");}
       ;
 
-VAR_DECL : VAR _semicolon   {printf("[Reduce %i%s", yyn, "]");}
+EXPR1 : VAR_DECL  {printf("[Reduce %i%s", yyn, "]");} 
+      ;
+
+VAR_DECL : VAR _semicolon {printf("[Reduce %i%s", yyn, "]");}
 	 ;
 
 VAR : TYPE _id {printf("[Reduce %i%s", yyn, "]");}
@@ -43,12 +43,20 @@ TYPE : _int         {printf("[Reduce %i%s", yyn, "]");}
      | _id          {printf("[Reduce %i%s", yyn, "]");}
      ;
 
-LVALUE : _id                         {printf("[Reduce %i%s", yyn, "]");} 
-       | LVALUE LVALUE_EXPR          {printf("[Reduce %i%s", yyn, "]");}
+VAR_PLUS : VAR                   {printf("[Reduce %i%s", yyn, "]");}
+	 | VAR_PLUS _comma VAR   {printf("[Reduce %i%s", yyn, "]");}
+         ;
+
+FORMALS : VAR_PLUS           {printf("[Reduce %i%s", yyn, "]");}
+        | /* EPSILON */      {printf("[Reduce %i%s", yyn, "]");}
+        ;
+
+LVALUE : _id                  {printf("[Reduce %i%s", yyn, "]");} 
+       | LVALUE LVALUE_EXPR   {printf("[Reduce %i%s", yyn, "]");}
        ;
 
-LVALUE_EXPR : _leftbracket EXPR _rightbracket        {printf("[Reduce %i%s", yyn, "]");}
-	    | LVALUE_EXPR PRODPERIODID               {printf("[Reduce %i%s", yyn, "]");}
+LVALUE_EXPR : _leftbracket EXPR _rightbracket  {printf("[Reduce %i%s", yyn, "]");}
+	    | LVALUE_EXPR PRODPERIODID         {printf("[Reduce %i%s", yyn, "]");}
 	    ;
 
 CALL : _id _leftparen ACTUALS _rightparen                {printf("[Reduce %i%s", yyn, "]");}
