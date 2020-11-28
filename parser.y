@@ -14,6 +14,8 @@ void yyerror(char *s);
 %left _assignop _or _and _equal _notequal _less _lessequal _greater _greaterequal _plus _minus _multiplication _division _mod
 %left _leftbracket _rightbracket _period
 %right _not
+%nonassoc IF_ONLY 
+%nonassoc _else
 
 /* expect 1 */
 
@@ -31,7 +33,11 @@ EXPR1 : VAR_DECL  {printf("[Reduce %i%s", yyn, "]");}
       ;
 
 VAR_DECL : VAR _semicolon {printf("[Reduce %i%s", yyn, "]");}
-	 ;
+         ;
+
+VAR_DECLS : VAR_DECLS VAR_DECL   {printf("[Reduce %i%s", yyn, "]");}
+          | /* ZERO */           {printf("[Reduce %i%s", yyn, "]");}
+          ;
 
 VAR : TYPE _id {printf("[Reduce %i%s", yyn, "]");}
     ;
@@ -45,7 +51,7 @@ TYPE : _int         {printf("[Reduce %i%s", yyn, "]");}
 
 VAR_PLUS : VAR                   {printf("[Reduce %i%s", yyn, "]");}
 	 | VAR_PLUS _comma VAR   {printf("[Reduce %i%s", yyn, "]");}
-         ;
+	 ;
 
 FORMALS : VAR_PLUS           {printf("[Reduce %i%s", yyn, "]");}
         | /* EPSILON */      {printf("[Reduce %i%s", yyn, "]");}
@@ -56,11 +62,11 @@ PROTOTYPE : TYPE _id _leftparen FORMALS _rightparen _semicolon    {printf("[Redu
           ;
 
 PROTOTYPE_PLUS : PROTOTYPE_PLUS PROTOTYPE   {printf("[Reduce %i%s", yyn, "]");}
-	       | /* ZERO */                 {printf("[Reduce %i%s", yyn, "]");}
+               | /* ZERO */                 {printf("[Reduce %i%s", yyn, "]");} 
 	       ;
 
 EXPR_ONE : EXPR         {printf("[Reduce %i%s", yyn, "]");}
-	 | /* ZERO */   {printf("[Reduce %i%s", yyn, "]");}
+         | /* ZERO */   {printf("[Reduce %i%s", yyn, "]");}
 	 ;
 
 STMT : EXPR_ONE _semicolon   {printf("[Reduce %i%s", yyn, "]");}
@@ -72,6 +78,32 @@ STMT : EXPR_ONE _semicolon   {printf("[Reduce %i%s", yyn, "]");}
      | PRINT_STMT            {printf("[Reduce %i%s", yyn, "]");}
      | STMT_BLOCK            {printf("[Reduce %i%s", yyn, "]");}
      ;
+
+STMTS : STMTS STMT    {printf("[Reduce %i%s", yyn, "]");}
+      | /* ZERO */    {printf("[Reduce %i%s", yyn, "]");}
+      ;
+
+IF_STMT : _if _leftparen EXPR _rightparen STMT IF_ONLY      {printf("[Reduce %i%s", yyn, "]");}
+        | _if _leftparen EXPR _rightparen STMT _else STMT   {printf("[Reduce %i%s", yyn, "]");}
+        ;
+
+WHILE_STMT : _while _leftparen EXPR _rightparen STMT        {printf("[Reduce %i%s", yyn, "]");}
+           ;
+
+FOR_STMT : _for _leftparen EXPR_ONE _semicolon EXPR _semicolon EXPR_ONE _rightparen STMT     {printf("[Reduce %i%s", yyn, "]");}
+         ;
+
+BREAK_STMT : _break _semicolon    {printf("[Reduce %i%s", yyn, "]");}
+           ;
+
+RETURN_STMT : _return EXPR_ONE _semicolon    {printf("[Reduce %i%s", yyn, "]");}
+            ;
+
+PRINT_STMT : _println _leftparen EXPRS _rightparen _semicolon    {printf("[Reduce %i%s", yyn, "]");}
+           ;
+
+STMT_BLOCK : _leftbrace VAR_DECLS STMTS _rightbrace    {printf("[Reduce %i%s", yyn, "]");}
+           ;
 
 EXPR : LVALUE _assignop EXPR                                       {printf("[Reduce %i%s", yyn, "]");}
      | CONSTANT                                                    {printf("[Reduce %i%s", yyn, "]");} 
@@ -107,7 +139,7 @@ LVALUE : _id                  {printf("[Reduce %i%s", yyn, "]");}
        ;
 
 LVALUE_EXPR : _leftbracket EXPR _rightbracket  {printf("[Reduce %i%s", yyn, "]");}
-	    | LVALUE_EXPR PRODPERIODID         {printf("[Reduce %i%s", yyn, "]");}
+            | LVALUE_EXPR PRODPERIODID         {printf("[Reduce %i%s", yyn, "]");}
 	    ;
 
 CALL : _id _leftparen ACTUALS _rightparen                {printf("[Reduce %i%s", yyn, "]");}
