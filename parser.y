@@ -160,7 +160,7 @@ EXPR : LVALUE _assignop EXPR                                       {printf("[Red
      | _not EXPR                                                   {printf("[Reduce %i%s", yyn, "]");}
      | _readln"()"                                                 {printf("[Reduce %i%s", yyn, "]");}
      | _newarray _leftparen _id _rightparen                        {printf("[Reduce %i%s", yyn, "]");}
-     | _newarray _leftparen _intconstant _comma Type _rightparen   {printf("[Reduce %i%s", yyn, "]");}
+     | _newarray _leftparen _intconstant _comma TYPE _rightparen   {printf("[Reduce %i%s", yyn, "]");}
      ;
 
 EXPRS : EXPR                {printf("[Reduce %i%s", yyn, "]");}
