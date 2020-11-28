@@ -58,7 +58,32 @@ PROTOTYPE : TYPE _id _leftparen FORMALS _rightparen _semicolon    {printf("[Redu
 PROTOTYPE_PLUS : PROTOTYPE_PLUS PROTOTYPE   {printf("[Reduce %i%s", yyn, "]");}
 	       | /* ZERO */                 {printf("[Reduce %i%s", yyn, "]");}
 	       ;
-	       
+
+EXPR : LVALUE _assignop EXPR                                       {printf("[Reduce %i%s", yyn, "]");}
+     | CONSTANT                                                    {printf("[Reduce %i%s", yyn, "]");} 
+     | LVALUE                                                      {printf("[Reduce %i%s", yyn, "]");}
+     | CALL                                                        {printf("[Reduce %i%s", yyn, "]");}
+     | _leftparen EXPR _rightparen                                 {printf("[Reduce %i%s", yyn, "]");}
+     | EXPR _plus EXPR                                             {printf("[Reduce %i%s", yyn, "]");}
+     | EXPR _minus EXPR                                            {printf("[Reduce %i%s", yyn, "]");}
+     | EXPR _multiplication EXPR                                   {printf("[Reduce %i%s", yyn, "]");}
+     | EXPR _division EXPR                                         {printf("[Reduce %i%s", yyn, "]");}
+     | EXPR _mod EXPR                                              {printf("[Reduce %i%s", yyn, "]");}
+     | _minus EXPR _multiplication                                 {printf("[Reduce %i%s", yyn, "]");} 
+     | EXPR _less  EXPR                                            {printf("[Reduce %i%s", yyn, "]");}
+     | EXPR _lessequal EXPR                                        {printf("[Reduce %i%s", yyn, "]");}
+     | EXPR _greater EXPR                                          {printf("[Reduce %i%s", yyn, "]");}
+     | EXPR _greaterequal EXPR                                     {printf("[Reduce %i%s", yyn, "]");}
+     | EXPR _equal EXPR                                            {printf("[Reduce %i%s", yyn, "]");}
+     | EXPR _notequal EXPR                                         {printf("[Reduce %i%s", yyn, "]");}      
+     | EXPR _and EXPR                                              {printf("[Reduce %i%s", yyn, "]");}
+     | EXPR _or EXPR                                               {printf("[Reduce %i%s", yyn, "]");}
+     | _not EXPR                                                   {printf("[Reduce %i%s", yyn, "]");}
+     | _readln"()"                                                 {printf("[Reduce %i%s", yyn, "]");}
+     | _newarray _leftparen _id _rightparen                        {printf("[Reduce %i%s", yyn, "]");}
+     | _newarray _leftparen _intconstant _comma Type _rightparen   {printf("[Reduce %i%s", yyn, "]");}
+     ;
+
 LVALUE : _id                  {printf("[Reduce %i%s", yyn, "]");} 
        | LVALUE LVALUE_EXPR   {printf("[Reduce %i%s", yyn, "]");}
        ;
