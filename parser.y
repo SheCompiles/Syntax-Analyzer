@@ -51,6 +51,14 @@ FORMALS : VAR_PLUS           {printf("[Reduce %i%s", yyn, "]");}
         | /* EPSILON */      {printf("[Reduce %i%s", yyn, "]");}
         ;
 
+PROTOTYPE : TYPE _id _leftparen FORMALS _rightparen _semicolon    {printf("[Reduce %i%s", yyn, "]");}
+          | _void _id _leftparen FORMALS _rightparen _semicolon   {printf("[Reduce %i%s", yyn, "]");}
+          ;
+
+PROTOTYPE_PLUS : PROTOTYPE_PLUS PROTOTYPE   {printf("[Reduce %i%s", yyn, "]");}
+	       | /* ZERO */                 {printf("[Reduce %i%s", yyn, "]");}
+	       ;
+	       
 LVALUE : _id                  {printf("[Reduce %i%s", yyn, "]");} 
        | LVALUE LVALUE_EXPR   {printf("[Reduce %i%s", yyn, "]");}
        ;
