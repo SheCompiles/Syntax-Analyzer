@@ -3,7 +3,6 @@ class [Shift]
 id [Shift]
 { [Reduce 26][Reduce 30][Shift][Reduce 35]
  
- 
 int [Shift][Reduce 13]
 id [Shift]
 ; [Reduce 12][Shift][Reduce 9][Reduce 32][Reduce 34]
@@ -49,7 +48,5 @@ id [Shift]
  
 } [Shift][Reduce 60][Reduce 20][Reduce 33][Reduce 34]
  
- 
-} [Shift][Reduce 31][Reduce 7][Reduce 3]
- [Reduce 2]
+} [Shift][Reduce 31][Reduce 7][Reduce 3][Reduce 2]
 [Accept]
