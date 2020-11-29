@@ -13,6 +13,7 @@ void yyerror(char *s);
 %left _assignop _or _and _equal _notequal _less _lessequal _greater _greaterequal _plus _minus _multiplication _division _mod
 %left _leftbracket _rightbracket _period
 %right _not
+
 %nonassoc IF_ONLY 
 %nonassoc _else
 
@@ -158,7 +159,7 @@ EXPR : LVALUE _assignop EXPR                                       {printf("[Red
      | EXPR _or EXPR                                               {printf("[Reduce %i%s", yyn, "]");}
      | _not EXPR                                                   {printf("[Reduce %i%s", yyn, "]");}
      | _readln"()"                                                 {printf("[Reduce %i%s", yyn, "]");}
-     | _newarray _leftparen _id _rightparen                        {printf("[Reduce %i%s", yyn, "]");}
+     | _new _leftparen _id _rightparen                             {printf("[Reduce %i%s", yyn, "]");}
      | _newarray _leftparen _intconstant _comma TYPE _rightparen   {printf("[Reduce %i%s", yyn, "]");}
      ;
 

@@ -27,6 +27,7 @@ identifier        [a-zA-Z]([a-zA-Z0-9])*
 "int"         { printf("\nint "); return (_int); } 
 "implements"  { printf("\nimplements "); return (_implements); } 
 "interface"   { printf("\ninterface "); return (_interface); } 
+"new"         { printf("\nnew "); return (_new); }
 "newarray"    { printf("\nnewarray "); return (_newarray); } 
 "println"     { printf("\nprintln "); return (_println); } 
 "readln"      { printf("\nreadln "); return (_readln); }
