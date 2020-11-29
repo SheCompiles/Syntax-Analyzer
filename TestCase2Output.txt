@@ -1,0 +1,5 @@
+
+int [Shift][Reduce 13]
+id [Shift]
+= [Reduce 12]
+[Reject]

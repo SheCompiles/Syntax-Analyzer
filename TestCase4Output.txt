@@ -1,0 +1,4 @@
+
+id [Shift][Reduce 17]
+= 
+[Reject]
