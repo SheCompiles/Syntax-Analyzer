@@ -1,14 +1,15 @@
 /* Working File! */
 class CompilersInterpreters{  
 
-      int classCount;
-      int numOfGrades;
-      double broncoID;
-      String professorName;
+    int classCount;
+    int numOfGrades;
+    double broncoID;
+    String professorName;
 
-      void classInfo() {
-      	println(classCount, numOfGrades);
-      	println(broncoID);
-      	println(professorName);
-      }
+    void classInfo() {
+    println(classCount, numOfGrades);
+    println(broncoID);
+    println(professorName);
+    }
+    
 }
