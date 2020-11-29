@@ -84,8 +84,8 @@ FIELD : VAR_DECL        {printf("[Reduce %i%s", yyn, "]");}
       | FUNCTION_DECL   {printf("[Reduce %i%s", yyn, "]");} 
       ;
 
-FIELD_PLUS : FIELD_PLUS FIELD   {printf("[Reduce %i%s", yyn, "]");} 
-           | /* ZERO */         {printf("[Reduce %i%s", yyn, "]");} 
+FIELD_PLUS : FIELD_PLUS FIELD      {printf("[Reduce %i%s", yyn, "]");} 
+           | /* EPSILON */         {printf("[Reduce %i%s", yyn, "]");} 
            ;
 	   
 INTERFACE_DECL : _interface _id _leftbrace PROTOTYPE_PLUS _rightbrace  {printf("[Reduce %i%s", yyn, "]");} 
@@ -95,12 +95,12 @@ PROTOTYPE : TYPE _id _leftparen FORMALS _rightparen _semicolon    {printf("[Redu
           | _void _id _leftparen FORMALS _rightparen _semicolon   {printf("[Reduce %i%s", yyn, "]");}
           ;
 
-PROTOTYPE_PLUS : PROTOTYPE_PLUS PROTOTYPE   {printf("[Reduce %i%s", yyn, "]");}
-               | /* ZERO */                 {printf("[Reduce %i%s", yyn, "]");} 
+PROTOTYPE_PLUS : PROTOTYPE_PLUS PROTOTYPE      {printf("[Reduce %i%s", yyn, "]");}
+               | /* EPSILON */                 {printf("[Reduce %i%s", yyn, "]");} 
 	       ;
 
-EXPR_ONE : EXPR         {printf("[Reduce %i%s", yyn, "]");}
-         | /* ZERO */   {printf("[Reduce %i%s", yyn, "]");}
+EXPR_ONE : EXPR            {printf("[Reduce %i%s", yyn, "]");}
+         | /* EPSILON */   {printf("[Reduce %i%s", yyn, "]");}
 	 ;
 
 STMT : EXPR_ONE _semicolon   {printf("[Reduce %i%s", yyn, "]");}
@@ -113,8 +113,8 @@ STMT : EXPR_ONE _semicolon   {printf("[Reduce %i%s", yyn, "]");}
      | STMT_BLOCK            {printf("[Reduce %i%s", yyn, "]");}
      ;
 
-STMTS : STMTS STMT    {printf("[Reduce %i%s", yyn, "]");}
-      | /* ZERO */    {printf("[Reduce %i%s", yyn, "]");}
+STMTS : STMTS STMT       {printf("[Reduce %i%s", yyn, "]");}
+      | /* EPSILON */    {printf("[Reduce %i%s", yyn, "]");}
       ;
 
 IF_STMT : _if _leftparen EXPR _rightparen STMT IF_ONLY      {printf("[Reduce %i%s", yyn, "]");}
