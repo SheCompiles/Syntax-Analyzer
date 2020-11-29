@@ -8,7 +8,7 @@ void yyerror(char *s);
 %start PARSER
 %token _leftparen _rightparen _leftbrace _rightbrace _leftbracket _rightbracket _semicolon 
 %token _boolean _double _int _string _class _implements _interface _void _id
-%token _if _else _break _extends _for _new _newarray _println _readln _return _while _comma _period _intconstant _doubleconstant _stringconstant _booleanconstant 
+%token _if _else _break _extends _for _newarray _println _readln _return _while _comma _period _intconstant _doubleconstant _stringconstant _booleanconstant 
 
 %left _assignop _or _and _equal _notequal _less _lessequal _greater _greaterequal _plus _minus _multiplication _division _mod
 %left _leftbracket _rightbracket _period
@@ -159,7 +159,6 @@ EXPR : LVALUE _assignop EXPR                                       {printf("[Red
      | EXPR _or EXPR                                               {printf("[Reduce %i%s", yyn, "]");}
      | _not EXPR                                                   {printf("[Reduce %i%s", yyn, "]");}
      | _readln"()"                                                 {printf("[Reduce %i%s", yyn, "]");}
-     | _new _leftparen _id _rightparen                             {printf("[Reduce %i%s", yyn, "]");}
      | _newarray _leftparen _intconstant _comma TYPE _rightparen   {printf("[Reduce %i%s", yyn, "]");}
      ;
 
