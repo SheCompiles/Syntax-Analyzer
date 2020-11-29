@@ -45,11 +45,12 @@ VAR_DECLS : VAR_DECLS VAR_DECL   {printf("[Reduce %i%s", yyn, "]");}
 VAR : TYPE _id {printf("[Reduce %i%s", yyn, "]");}
     ;
 
-TYPE : _int         {printf("[Reduce %i%s", yyn, "]");}
-     | _double      {printf("[Reduce %i%s", yyn, "]");}
-     | _boolean     {printf("[Reduce %i%s", yyn, "]");}
-     | _string      {printf("[Reduce %i%s", yyn, "]");}
-     | _id          {printf("[Reduce %i%s", yyn, "]");}
+TYPE : _int                               {printf("[Reduce %i%s", yyn, "]");}
+     | _double                            {printf("[Reduce %i%s", yyn, "]");}
+     | _boolean                           {printf("[Reduce %i%s", yyn, "]");}
+     | _string                            {printf("[Reduce %i%s", yyn, "]");}
+     | TYPE _leftbracket _rightbracket    {printf("[Reduce %i%s", yyn, "]");} 
+     | _id                                {printf("[Reduce %i%s", yyn, "]");}
      ;
      
 FUNCTION_DECL : TYPE _id _leftparen FORMALS _rightparen STMT_BLOCK   {printf("[Reduce %i%s", yyn, "]");} 
