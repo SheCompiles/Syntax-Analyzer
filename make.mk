@@ -3,7 +3,6 @@ syntaxAnalyzer: lex.yy.c y.tab.c
 
 lex.yy.c: y.tab.c lexical.l
 	lex lexical.l
-    
 
 y.tab.c: parser.y
 	yacc -dyv parser.y	
