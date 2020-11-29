@@ -1,6 +1,5 @@
-/* Working File! */
-class CompilersInterpreters{  
-
+/* Working File 1! */
+class CompilersInterpreters{
     int classCount;
     int numOfGrades;
     double broncoID;
@@ -10,6 +9,5 @@ class CompilersInterpreters{
     println(classCount, numOfGrades);
     println(broncoID);
     println(professorName);
-    }
-    
+    } 
 }
