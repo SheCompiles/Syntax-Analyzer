@@ -86,7 +86,8 @@
      _or = 302,
      _assignop = 303,
      _not = 304,
-     IF_ONLY = 305
+     _new = 305,
+     IF_ONLY = 306
    };
 #endif
 /* Tokens.  */
@@ -137,7 +138,8 @@
 #define _or 302
 #define _assignop 303
 #define _not 304
-#define IF_ONLY 305
+#define _new 305
+#define IF_ONLY 306
 
 
 
