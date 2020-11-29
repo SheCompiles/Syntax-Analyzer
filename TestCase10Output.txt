@@ -1,0 +1,8 @@
+boolean [Shift][Reduce 15]
+id [Shift]
+; [Reduce 12][Shift][Reduce 9][Reduce 5][Reduce 3]
+ 
+id [Shift][Reduce 17]
+ 
+double 
+[Reject]
