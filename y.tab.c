@@ -1558,6 +1558,7 @@ yybackup:
 
   /* Shift the look-ahead token.  */
   YY_SYMBOL_PRINT ("Shifting", yytoken, &yylval, &yylloc);
+	printf("[Shift]");
 
   /* Discard the shifted token unless it is eof.  */
   if (yychar != YYEOF)
