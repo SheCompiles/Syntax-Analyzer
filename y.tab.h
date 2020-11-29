@@ -60,33 +60,33 @@
      _break = 276,
      _extends = 277,
      _for = 278,
-     _newarray = 279,
-     _println = 280,
-     _readln = 281,
-     _return = 282,
-     _while = 283,
-     _comma = 284,
-     _period = 285,
-     _intconstant = 286,
-     _doubleconstant = 287,
-     _stringconstant = 288,
-     _booleanconstant = 289,
-     _mod = 290,
-     _division = 291,
-     _multiplication = 292,
-     _minus = 293,
-     _plus = 294,
-     _greaterequal = 295,
-     _greater = 296,
-     _lessequal = 297,
-     _less = 298,
-     _notequal = 299,
-     _equal = 300,
-     _and = 301,
-     _or = 302,
-     _assignop = 303,
-     _not = 304,
-     _new = 305,
+     _new = 279,
+     _newarray = 280,
+     _println = 281,
+     _readln = 282,
+     _return = 283,
+     _while = 284,
+     _comma = 285,
+     _period = 286,
+     _intconstant = 287,
+     _doubleconstant = 288,
+     _stringconstant = 289,
+     _booleanconstant = 290,
+     _mod = 291,
+     _division = 292,
+     _multiplication = 293,
+     _minus = 294,
+     _plus = 295,
+     _greaterequal = 296,
+     _greater = 297,
+     _lessequal = 298,
+     _less = 299,
+     _notequal = 300,
+     _equal = 301,
+     _and = 302,
+     _or = 303,
+     _assignop = 304,
+     _not = 305,
      IF_ONLY = 306
    };
 #endif
@@ -112,33 +112,33 @@
 #define _break 276
 #define _extends 277
 #define _for 278
-#define _newarray 279
-#define _println 280
-#define _readln 281
-#define _return 282
-#define _while 283
-#define _comma 284
-#define _period 285
-#define _intconstant 286
-#define _doubleconstant 287
-#define _stringconstant 288
-#define _booleanconstant 289
-#define _mod 290
-#define _division 291
-#define _multiplication 292
-#define _minus 293
-#define _plus 294
-#define _greaterequal 295
-#define _greater 296
-#define _lessequal 297
-#define _less 298
-#define _notequal 299
-#define _equal 300
-#define _and 301
-#define _or 302
-#define _assignop 303
-#define _not 304
-#define _new 305
+#define _new 279
+#define _newarray 280
+#define _println 281
+#define _readln 282
+#define _return 283
+#define _while 284
+#define _comma 285
+#define _period 286
+#define _intconstant 287
+#define _doubleconstant 288
+#define _stringconstant 289
+#define _booleanconstant 290
+#define _mod 291
+#define _division 292
+#define _multiplication 293
+#define _minus 294
+#define _plus 295
+#define _greaterequal 296
+#define _greater 297
+#define _lessequal 298
+#define _less 299
+#define _notequal 300
+#define _equal 301
+#define _and 302
+#define _or 303
+#define _assignop 304
+#define _not 305
 #define IF_ONLY 306
 
 
