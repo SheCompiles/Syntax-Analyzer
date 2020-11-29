@@ -1,3 +1,10 @@
 int [Shift][Reduce 13]
-[ 
-[Reject]
+[ [Shift]
+] [Shift][Reduce 17]
+[ [Shift]
+] [Shift][Reduce 17]
+[ [Shift]
+] [Shift][Reduce 17]
+id [Shift]
+; [Reduce 12][Shift][Reduce 9][Reduce 5][Reduce 3][Reduce 2]
+[Accept]
