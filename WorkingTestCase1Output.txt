@@ -49,5 +49,7 @@ id [Shift]
  
 } [Shift][Reduce 60][Reduce 20][Reduce 33][Reduce 34]
  
-} [Shift][Reduce 31][Reduce 7][Reduce 3][Reduce 2]
+ 
+} [Shift][Reduce 31][Reduce 7][Reduce 3]
+ [Reduce 2]
 [Accept]
