@@ -9,9 +9,11 @@ For this compiler project, we are implementing a syntax analyzer for the program
 ## Installation
 
 ## Steps to Run & Compile Project 2's Syntax Analyzer
+```
  make -f make.mk
  
  ./a.out < toyprogram.toy > output.txt
+ ```
 
 ## Test Cases for Project 2's Syntax Analyzer
 
