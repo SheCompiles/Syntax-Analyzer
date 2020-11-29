@@ -1,0 +1,3 @@
+int [Shift][Reduce 13]
+[ 
+[Reject]
