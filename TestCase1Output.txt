@@ -1,0 +1,13 @@
+
+void [Shift]
+id [Shift]
+( [Shift]
+double [Shift][Reduce 14]
+id [Shift][Reduce 12][Reduce 20]
+, [Shift]
+double [Shift][Reduce 14]
+id [Shift][Reduce 12][Reduce 21]
+) [Reduce 22][Shift]
+{ [Shift][Reduce 11]
+} [Reduce 51][Shift][Reduce 59][Reduce 19][Reduce 6][Reduce 3][Reduce 2]
+[Accept]
