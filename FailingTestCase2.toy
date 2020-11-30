@@ -1,0 +1,12 @@
+/* Failing File 2 */
+
+int a;
+int b;
+
+int addNumbers(int first, int second)
+{
+    int addTotal;
+    int subTotal;
+    addTotal = first + second;
+    subTotal = first - second;
+}

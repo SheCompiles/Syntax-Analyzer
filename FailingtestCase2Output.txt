@@ -1,0 +1,34 @@
+
+ 
+int [Shift][Reduce 13]
+id [Shift]
+; [Reduce 12][Shift][Reduce 9][Reduce 5][Reduce 3]
+ 
+int [Shift][Reduce 13]
+id [Shift]
+; [Reduce 12][Shift][Reduce 9][Reduce 5][Reduce 4]
+ 
+ 
+int [Shift][Reduce 13]
+id [Shift]
+( [Shift]
+int [Shift][Reduce 13]
+id [Shift][Reduce 12][Reduce 21]
+, [Shift]
+int [Shift][Reduce 13]
+id [Shift][Reduce 12][Reduce 22]
+) [Reduce 23][Shift]
+ 
+{ [Shift][Reduce 11]
+ 
+int [Shift][Reduce 13]
+id [Shift][Reduce 12]
+; [Shift][Reduce 9][Reduce 10]
+ 
+int [Shift][Reduce 13]
+id [Shift][Reduce 12]
+; [Shift][Reduce 9][Reduce 10]
+ 
+id [Shift][Reduce 18]
+= 
+[Reject]
