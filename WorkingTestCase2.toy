@@ -1,0 +1,23 @@
+/* Working File 2 to test mathematical expressions, println, and modulus */
+
+int main()
+{
+    println(addAges(3,7,21));
+    println(getName(Barbara));
+    getModulus(21,3);
+}
+
+int addAges(int age1, int age2, int age3)
+{
+    return age1 + age2 + age3;
+}
+
+string getName(string name)
+{
+    return name;
+}
+
+int getModulus(int first, int second)
+{
+    println(first % second);
+}

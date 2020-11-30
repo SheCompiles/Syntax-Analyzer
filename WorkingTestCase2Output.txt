@@ -1,0 +1,107 @@
+
+ 
+int [Shift][Reduce 13]
+id [Shift]
+( [Shift]
+) [Reduce 24][Shift]
+ 
+{ [Shift][Reduce 11]
+ 
+println [Reduce 52][Shift]
+( [Shift]
+id [Shift]
+( [Shift]
+intconstant [Shift][Reduce 95][Reduce 62]
+, [Reduce 84][Shift]
+intconstant [Shift][Reduce 95][Reduce 62]
+, [Reduce 85][Shift]
+intconstant [Shift][Reduce 95][Reduce 62]
+) [Reduce 85][Reduce 93][Shift][Reduce 90][Reduce 64]
+) [Reduce 84][Shift]
+; [Shift][Reduce 59][Reduce 49][Reduce 51]
+ 
+println [Shift]
+( [Shift]
+id [Shift]
+( [Shift]
+id [Shift]
+) [Reduce 86][Reduce 63][Reduce 84][Reduce 93][Shift][Reduce 90][Reduce 64]
+) [Reduce 84][Shift]
+; [Shift][Reduce 59][Reduce 49][Reduce 51]
+ 
+id [Shift]
+( [Shift]
+intconstant [Shift][Reduce 95][Reduce 62]
+, [Reduce 84][Shift]
+intconstant [Shift][Reduce 95][Reduce 62]
+) [Reduce 85][Reduce 93][Shift][Reduce 90][Reduce 64]
+; [Reduce 41][Shift][Reduce 43][Reduce 51]
+ 
+} [Shift][Reduce 60][Reduce 19][Reduce 6][Reduce 3]
+ 
+ 
+int [Shift][Reduce 13]
+id [Shift]
+( [Shift]
+int [Shift][Reduce 13]
+id [Shift][Reduce 12][Reduce 21]
+, [Shift]
+int [Shift][Reduce 13]
+id [Shift][Reduce 12][Reduce 22]
+, [Shift]
+int [Shift][Reduce 13]
+id [Shift][Reduce 12][Reduce 22]
+) [Reduce 23][Shift]
+ 
+{ [Shift][Reduce 11]
+ 
+return [Reduce 52][Shift]
+id [Shift]
++ [Reduce 86][Reduce 63][Shift]
+id [Shift]
++ [Reduce 86][Reduce 63][Reduce 66][Shift]
+id [Shift]
+; [Reduce 86][Reduce 63][Reduce 66][Reduce 41][Shift][Reduce 58][Reduce 48][Reduce 51]
+ 
+} [Shift][Reduce 60][Reduce 19][Reduce 6][Reduce 4]
+ 
+ 
+string [Shift][Reduce 16]
+id [Shift]
+( [Shift]
+string [Shift][Reduce 16]
+id [Shift][Reduce 12][Reduce 21]
+) [Reduce 23][Shift]
+ 
+{ [Shift][Reduce 11]
+ 
+return [Reduce 52][Shift]
+id [Shift]
+; [Reduce 86][Reduce 63][Reduce 41][Shift][Reduce 58][Reduce 48][Reduce 51]
+ 
+} [Shift][Reduce 60][Reduce 19][Reduce 6][Reduce 4]
+ 
+ 
+int [Shift][Reduce 13]
+id [Shift]
+( [Shift]
+int [Shift][Reduce 13]
+id [Shift][Reduce 12][Reduce 21]
+, [Shift]
+int [Shift][Reduce 13]
+id [Shift][Reduce 12][Reduce 22]
+) [Reduce 23][Shift]
+ 
+{ [Shift][Reduce 11]
+ 
+println [Reduce 52][Shift]
+( [Shift]
+id [Shift]
+% [Reduce 86][Reduce 63][Shift]
+id [Shift]
+) [Reduce 86][Reduce 63][Reduce 70][Reduce 84][Shift]
+; [Shift][Reduce 59][Reduce 49][Reduce 51]
+ 
+} [Shift][Reduce 60][Reduce 19][Reduce 6][Reduce 4]
+ [Reduce 2]
+[Accept]
