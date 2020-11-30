@@ -1,0 +1,16 @@
+/* Failing File 1! */
+
+class thisFileFails {
+	int firstInt;
+	double firstDbl = 5.0;
+	string firstStr = "Hello World!";
+	int[] firstArr = {1, 2, 3, 4, 5};
+
+	for (int i = 0; i < firstArr.length; i++) {
+		println(firstArr[i] + " ");
+	}
+
+	void printVars() {
+		println(firstInt, firstDbl);
+	}
+}
