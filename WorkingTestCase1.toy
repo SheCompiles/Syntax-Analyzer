@@ -3,7 +3,7 @@ class CompilersInterpreters{
     int classCount;
     int numOfGrades;
     double broncoID;
-    String professorName;
+    string professorName;
 
     void classInfo() {
     println(classCount, numOfGrades);
