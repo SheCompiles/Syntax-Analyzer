@@ -2,6 +2,7 @@
 #include <stdio.h>
 extern int yylex();
 extern int yyparse();
+int yydebug=1;
 void yyerror(char *s);
 %}
 
