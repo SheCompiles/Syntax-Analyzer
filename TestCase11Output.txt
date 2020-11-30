@@ -1,0 +1,9 @@
+
+int [Shift][Reduce 13]
+id [Shift]
+( [Shift]
+) [Reduce 23][Shift]
+{ [Shift][Reduce 11]
+ 
+class [Reduce 51][Reduce 41]
+[Reject]
