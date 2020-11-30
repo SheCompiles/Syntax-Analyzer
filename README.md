@@ -45,16 +45,16 @@ Steps to Run with P1Test.toy:
 Input Test Cases 
 - P1Test.toy             - TestCase5.toy          - TestCase10.toy          - WorkingTestCase1.toy
 - TestCase1.toy          - TestCase6.toy          - TestCase11.toy          - WorkingTestCase2.toy
-- TestCase2.toy          - TestCase7.toy          - TestCase12.toy          - FailingTestCase1.toy
-- TestCase3.toy          - TestCase8.toy          - TestCase13.toy          - FailingTestCase2.toy
-- TestCase4.toy          - TestCase9.toy          - TestCase14.toy
+- TestCase2.toy          - TestCase7.toy          - TestCase12.toy          - WorkingTestCase3.toy
+- TestCase3.toy          - TestCase8.toy          - TestCase13.toy          - FailingTestCases.toy
+- TestCase4.toy          - TestCase9.toy          - TestCase14.toy          - FailingTestCase2.toy
 
 Outputs
 - P1TestOutput.txt       - TestCase5Output.txt    - TestCase10Output.txt    - WorkingTestCase1Output.txt
 - TestCase1Output.txt    - TestCase6Output.txt    - TestCase11Output.txt    - WorkingTestCase2Output.txt
-- TestCase2Output.txt    - TestCase7Output.txt    - TestCase12Output.txt    - FailingTestCase1Output.txt
-- TestCase3Output.txt    - TestCase8Output.txt    - TestCase13Output.txt    - FailingTestCase2Output.txt
-- TestCase4Output.txt    - TestCase9Output.txt    - TestCase14Output.txt
+- TestCase2Output.txt    - TestCase7Output.txt    - TestCase12Output.txt    - WorkingTestCase3Output.txt
+- TestCase3Output.txt    - TestCase8Output.txt    - TestCase13Output.txt    - FailingTestCase1Output.txt
+- TestCase4Output.txt    - TestCase9Output.txt    - TestCase14Output.txt    - FailingTestCase2Output.txt
 ```
 
 ## Design & Implementation Explanations of Project 2
