@@ -1,0 +1,40 @@
+
+ 
+ 
+int [Reduce 13]
+id 
+( 
+) [Reduce 24]
+{ [Reduce 11]
+ 
+if [Reduce 52]
+( 
+id 
+= [Reduce 86]
+intconstant [Reduce 95][Reduce 62][Reduce 61]
+) 
+ 
+{ [Reduce 11]
+ 
+println [Reduce 52]
+( 
+intconstant [Reduce 95][Reduce 62]
+) [Reduce 84]
+; [Reduce 59][Reduce 49][Reduce 51]
+ 
+} [Reduce 60][Reduce 50]
+ 
+else 
+ 
+{ [Reduce 11]
+ 
+println [Reduce 52]
+( 
+intconstant [Reduce 95][Reduce 62]
+) [Reduce 84]
+; [Reduce 59][Reduce 49][Reduce 51]
+ 
+} [Reduce 60][Reduce 50][Reduce 54][Reduce 44][Reduce 51]
+ 
+} [Reduce 60][Reduce 19][Reduce 6][Reduce 3][Reduce 2]
+[Accept]
