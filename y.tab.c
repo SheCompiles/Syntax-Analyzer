@@ -93,7 +93,7 @@ void yyerror(char *s);
 # define YY_YY_Y_TAB_H_INCLUDED
 /* Debug traces.  */
 #ifndef YYDEBUG
-# define YYDEBUG 1
+# define YYDEBUG 0
 #endif
 #if YYDEBUG
 extern int yydebug;
@@ -1414,12 +1414,12 @@ yybackup:
   /* Count tokens shifted since error; after three, turn off error
      status.  */
   if (yyerrstatus)
-printf("[Shift]");
     yyerrstatus--;
 
   /* Shift the lookahead token.  */
   YY_SYMBOL_PRINT ("Shifting", yytoken, &yylval, &yylloc);
-
+printf("[Shift]");
+    
   /* Discard the shifted token.  */
   yychar = YYEMPTY;
 
