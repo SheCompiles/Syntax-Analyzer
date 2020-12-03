@@ -1,8 +1,24 @@
+
 boolean [Shift][Reduce 15]
 id [Shift]
 ; [Reduce 12][Shift][Reduce 9][Reduce 5][Reduce 3]
  
 id [Shift][Reduce 17]
+id [Shift]
+( [Shift]
+) [Reduce 23][Shift]
+{ [Shift][Reduce 11]
+} [Reduce 51][Shift][Reduce 59][Reduce 18][Reduce 6][Reduce 4]
  
-double 
-[Reject]
+double [Shift][Reduce 14]
+id [Shift]
+; [Reduce 12][Shift][Reduce 9][Reduce 5][Reduce 4]
+ 
+string [Shift][Reduce 16]
+id [Shift]
+( [Shift]
+) [Reduce 23][Shift]
+{ [Shift][Reduce 11]
+} [Reduce 51][Shift][Reduce 59][Reduce 18][Reduce 6][Reduce 4]
+ [Reduce 2][Shift]
+[Accept]
