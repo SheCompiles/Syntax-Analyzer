@@ -58,6 +58,9 @@ Outputs
 ```
 
 ## Design & Implementation Explanations of Project 2
+```
+[Included in Report]
+```
 ## EXTRA CREDIT FEATURES
 ```
 Operator Precedence (%prec)
