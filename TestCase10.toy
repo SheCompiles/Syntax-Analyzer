@@ -1,5 +1,5 @@
 // in class 
 boolean b; 
-userDefinedClassType f( ){ }
+userDefinedClassType f(){}
 double d; 
 string g(){}
