@@ -188,10 +188,10 @@ ACTUALS : EXPRS           {printf("[Reduce %i%s", yyn, "]");}
  	| /* EPSILON */   {printf("[Reduce %i%s", yyn, "]");}
  	;
 
-CONSTANT : _intconstant      {printf("[Reduce %i%s", yyn, "]");}
-         | _doubleconstant   {printf("[Reduce %i%s", yyn, "]");}
-         | _stringconstant   {printf("[Reduce %i%s", yyn, "]");}
-         | _booleanconstant  {printf("[Reduce %i%s", yyn, "]");}
+CONSTANT : %prec _intconstant      {printf("[Reduce %i%s", yyn, "]");}
+         | _doubleconstant         {printf("[Reduce %i%s", yyn, "]");}
+         | _stringconstant         {printf("[Reduce %i%s", yyn, "]");}
+         | _booleanconstant        {printf("[Reduce %i%s", yyn, "]");}
          ;
 
 %%
