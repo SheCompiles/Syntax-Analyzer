@@ -118,8 +118,8 @@ STMTS : STMTS STMT       {printf("[Reduce %i%s", yyn, "]");}
       | /* EPSILON */    {printf("[Reduce %i%s", yyn, "]");}
       ;
 
-IF_STMT : _if _leftparen EXPR _rightparen STMT IF_ONLY      {printf("[Reduce %i%s", yyn, "]");}
-        | _if _leftparen EXPR _rightparen STMT _else STMT   {printf("[Reduce %i%s", yyn, "]");}
+IF_STMT : _if _leftparen EXPR _rightparen STMT %prec IF_ONLY      {printf("[Reduce %i%s", yyn, "]");}
+        | _if _leftparen EXPR _rightparen STMT _else STMT         {printf("[Reduce %i%s", yyn, "]");}
         ;
 
 WHILE_STMT : _while _leftparen EXPR _rightparen STMT        {printf("[Reduce %i%s", yyn, "]");}
@@ -150,7 +150,7 @@ EXPR : LVALUE _assignop EXPR                                       {printf("[Red
      | EXPR _multiplication EXPR                                   {printf("[Reduce %i%s", yyn, "]");}
      | EXPR _division EXPR                                         {printf("[Reduce %i%s", yyn, "]");}
      | EXPR _mod EXPR                                              {printf("[Reduce %i%s", yyn, "]");}
-     | _minus EXPR _multiplication                                 {printf("[Reduce %i%s", yyn, "]");} 
+     | _minus EXPR %prec _multiplication                           {printf("[Reduce %i%s", yyn, "]");} 
      | EXPR _less  EXPR                                            {printf("[Reduce %i%s", yyn, "]");}
      | EXPR _lessequal EXPR                                        {printf("[Reduce %i%s", yyn, "]");}
      | EXPR _greater EXPR                                          {printf("[Reduce %i%s", yyn, "]");}
