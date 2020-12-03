@@ -1,5 +1,6 @@
-// in class
-boolean b;
-userDefinedClassType
-double d;
+
+// in class 
+boolean b; 
+userDefinedClassType f( ){ }
+double d; 
 string g(){}
