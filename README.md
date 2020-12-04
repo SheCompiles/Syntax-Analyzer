@@ -60,3 +60,6 @@ Outputs
 
 **Operator Precedence (%prec)**
 - Initially, we had issues with the outputs for some of the provided test cases involving operator precedence. After verifying the expected outputs (whether it    would result with "Accept" or "Reject"), our parser would prioritize integer constants, rather than double constants - leading to an incorrect result for given cases. For this, our group researched features of Yacc, such as the %prec operator, to incorporate into our parser file in order to produce the proper precedence for the provided test cases. In this sense, this was a significant security feature of our Syntax Analyzer and resolved various conflicts/issues.
+
+**Handling Escape Characters (\n and \t)**
+- To add more security to our parser, we also ensured that the parser could handle the use of escape characters within string constants. If we didn't take this into account, our parser could potentially view this as an error and not properly parse through the program input when the input should theoretically be accepted. Thus, in our lexical file we ensure that we have the analyzer skip over these escape characters and handle the string constant normally as written by its rule.
